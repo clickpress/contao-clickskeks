@@ -1,0 +1,34 @@
+{
+  "name": "clickpress/contao-clickskeks",
+  "type": "contao-bundle",
+  "description": "Bundle for clickskeks cookie-consent solution",
+  "homepage": "https://github.com/systemhaus/contao-cookiebot",
+  "license": "LGPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Stefan Schulz-Lauterbach",
+      "email": "ssl@clickpress.de",
+      "homepage": "https://clickpress.de/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2 || ^8.0",
+    "contao/core-bundle": "^4.9"
+  },
+  "conflict": {
+    "contao/manager-plugin": "<2.0 || >=3.0"
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.0",
+    "contao/easy-coding-standard": "^2.0"
+  },
+  "extra": {
+    "contao-manager-plugin": "Clickpress\\ContaoClickskeksBundle\\ContaoManager\\Plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Clickpress\\ContaoClickskeksBundle\\": "src/"
+    }
+  }
+}

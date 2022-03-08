@@ -1,0 +1,3 @@
+services:
+  Clickpress\ContaoClickskeksBundle\EventListener\ContaoClickskeksListener:
+    tags: ['terminal42_service_annotation']
