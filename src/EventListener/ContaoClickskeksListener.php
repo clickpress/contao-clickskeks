@@ -50,11 +50,10 @@ class ContaoClickskeksListener implements ServiceAnnotationInterface
             return $buffer;
         }
 
-        $strClickskeksJs = '<script src="https://static.clickskeks.at/ff/5b/%s/bundle.js" type="application/javascript"></script>';
+        $html = '<script src="https://static.clickskeks.at/ff/5b/%s/bundle.js" type="application/javascript"></script>';
 
-        $js = sprintf($strClickskeksJs, $objRootPage->clickskeks_api_key);
-        $strBuffer = preg_replace('/(<head>)/s', "$1\n$js", $buffer);
+        $html = sprintf($html, $objRootPage->clickskeks_api_key);
 
-        return $strBuffer;
+        return preg_replace('/(<head>)/s', "$1\n$html", $buffer);
     }
 }
