@@ -33,6 +33,9 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ContaoClickskeksListener implements ServiceAnnotationInterface
 {
+
+    private string $html =  '<script src="https://static.clickskeks.at/%s/%s/%s/bundle.js" type="application/javascript"></script>';
+
     /**
      * @Hook("modifyFrontendPage")
      */
@@ -50,9 +53,12 @@ class ContaoClickskeksListener implements ServiceAnnotationInterface
             return $buffer;
         }
 
-        $html = '<script src="https://static.clickskeks.at/ff/5b/%s/bundle.js" type="application/javascript"></script>';
-
-        $html = sprintf($html, $objRootPage->clickskeks_api_key);
+        $html = sprintf(
+            $this->html,
+            substr($objRootPage->clickskeks_api_key, 0, 2),
+            substr($objRootPage->clickskeks_api_key, 2, 2),
+            $objRootPage->clickskeks_api_key
+        );
 
         return preg_replace('/(<head>)/s', "$1\n$html", $buffer);
     }
