@@ -2,7 +2,7 @@
   "name": "clickpress/contao-clickskeks",
   "type": "contao-bundle",
   "description": "Bundle for clickskeks cookie-consent solution",
-  "homepage": "https://github.com/systemhaus/contao-cookiebot",
+  "homepage": "https://github.com/clickpress/contao-clickskeks",
   "license": "LGPL-3.0-or-later",
   "authors": [
     {
