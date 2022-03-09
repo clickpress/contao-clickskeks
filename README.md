@@ -2,3 +2,17 @@
 # Contao Clickskeks
 Contao extension for clickskeks cookie consent banner
 
+## Installation
+```console
+composer require clickpress/contao-clickskeks
+```
+or use the Contao Manager.
+
+## Usage
+1. Add your site in your clickskeks panel
+2. Go to "Site structure" in Contao and and activate Clickskeks banner in your root site
+3. Add your Banner ID
+4. Clear the "Shared Cache" under "Maintenance"
+
+## ToDo
+A content element for your cookie information will be added later.
