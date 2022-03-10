@@ -9,5 +9,5 @@
  * file that was distributed with this source code.
  */
 
-$GLOBALS['TL_LANG']['CTE']['clickskeks_disclaimer'][0] = 'Clickskeks Disclaimer';
-$GLOBALS['TL_LANG']['CTE']['clickskeks_disclaimer'][1] = 'Clickskeks Disclaimer';
+$GLOBALS['TL_LANG']['CTE']['contao_clickskeks'][0] = 'Clickskeks Disclaimer';
+$GLOBALS['TL_LANG']['CTE']['contao_clickskeks'][1] = 'Clickskeks Disclaimer';

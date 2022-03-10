@@ -1,0 +1,2 @@
+
+<script id="clickskeks-disclaimer-script" src="<?= $this->clickskeks_disclaimer_url ?>" type="application/javascript"></script>

@@ -1,3 +1,9 @@
 services:
-  Clickpress\ContaoClickskeksBundle\EventListener\ContaoClickskeksListener:
-    tags: ['terminal42_service_annotation']
+    _defaults:
+        autoconfigure: true
+
+    Clickpress\ContaoClickskeksBundle\EventListener\ContaoClickskeksListener:
+        tags: ["terminal42_service_annotation"]
+
+    Clickpress\ContaoClickskeksBundle\Controller\ContentElement\ContaoClickskeksController:
+        tags: ["terminal42_service_annotation"]

@@ -12,4 +12,4 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['clickskeks_disclaimer'] = '{type_legend},type;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,sliderCustomOptions;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['contao_clickskeks'] = '{type_legend},type;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop';
