@@ -33,6 +33,13 @@ class ContaoClickskeksController extends AbstractContentElementController
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
+        
+        $request = System::getContainer()->get('request_stack')->getCurrentRequest();
+
+        if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request)) {
+            return $template->getResponse();
+        }
+        
         global $objPage;
         $objRootPage = PageModel::findByPk($objPage->rootId);
         $html = sprintf(
@@ -43,7 +50,6 @@ class ContaoClickskeksController extends AbstractContentElementController
         );
         
         $template->clickskeks_disclaimer_url = $html;
-        dump($model);
 
         return $template->getResponse();
     }
