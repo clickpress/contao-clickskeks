@@ -14,5 +14,3 @@ or use the Contao Manager.
 3. Add your Banner ID
 4. Clear the "Shared Cache" under "Maintenance"
 
-## ToDo
-A content element for your cookie information will be added later.
