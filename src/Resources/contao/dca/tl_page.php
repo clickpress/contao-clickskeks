@@ -13,7 +13,6 @@ declare(strict_types=1);
  */
 
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
-use Contao\CoreBundle\Util\LocaleUtil;
 
 $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'clickskeks_active';
 
