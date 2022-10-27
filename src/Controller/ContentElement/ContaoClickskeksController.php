@@ -39,11 +39,10 @@ class ContaoClickskeksController extends AbstractContentElementController
             return $template->getResponse();
         }
 
-        global $objPage;
-        $objRootPage = PageModel::findByPk($objPage->rootId);
+        $rootPage = $this->getPageModel();
+        $objRootPage = PageModel::findByPk($rootPage->rootId);
 
         // check if a specific language is set to the bar
-        $barLanguage = '';
         if($objRootPage->clickskeks_language) {
             $template->clickskeks_language = $objRootPage->clickskeks_language;
         }
