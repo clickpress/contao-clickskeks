@@ -29,27 +29,24 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ContaoClickskeksController extends AbstractContentElementController
 {
-    protected string $strDisclaimerUrl = 'https://static.clickskeks.at/%s/%s/%s/disclaimer.js';
-
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
-        
+
         $request = System::getContainer()->get('request_stack')->getCurrentRequest();
 
         if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request)) {
+            $template = new BackendTemplate('be_wildcard');
             return $template->getResponse();
         }
-        
+
         global $objPage;
         $objRootPage = PageModel::findByPk($objPage->rootId);
-        $html = sprintf(
-            $this->strDisclaimerUrl,
-            substr($objRootPage->clickskeks_api_key, 0, 2),
-            substr($objRootPage->clickskeks_api_key, 2, 2),
-            $objRootPage->clickskeks_api_key
-        );
-        
-        $template->clickskeks_disclaimer_url = $html;
+
+        // check if a specific language is set to the bar
+        $barLanguage = '';
+        if($objRootPage->clickskeks_language) {
+            $template->clickskeks_language = $objRootPage->clickskeks_language;
+        }
 
         return $template->getResponse();
     }

@@ -1,2 +1,2 @@
 
-<script id="clickskeks-disclaimer-script" src="<?= $this->clickskeks_disclaimer_url ?>" type="application/javascript"></script>
+<div class="ccm-cookie-declaration"<?php if($this->clickskeks_language): ?> data-lang="<?= $this->clickskeks_language ?>"<?php endif; ?>>Please enable Javascript to see the list of all declared cookies and similar techniques.</div>
