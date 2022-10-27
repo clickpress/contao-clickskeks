@@ -34,7 +34,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 class ContaoClickskeksListener implements ServiceAnnotationInterface
 {
 
-    private string $html =  '<script src="https://static.clickskeks.at/%s/%s/%s/bundle.js" type="application/javascript"></script>';
+    private string $html =  '<script src="https://mein.clickskeks.at/app.js?apiKey=%s&amp;domain=%s%s" referrerpolicy="origin"></script>';
 
     /**
      * @Hook("modifyFrontendPage")
@@ -49,15 +49,22 @@ class ContaoClickskeksListener implements ServiceAnnotationInterface
         global $objPage;
         $objRootPage = PageModel::findByPk($objPage->rootId);
 
-        if (null === $objRootPage || null === $objRootPage->clickskeks_active || null === $objRootPage->clickskeks_api_key) {
+        // check if null, to prevent that the bar is loaded, even if the checkbox 'activate clickskeks' is not checked
+        if (null === $objRootPage || null === $objRootPage->clickskeks_active || null === $objRootPage->clickskeks_api_key || null === $objRootPage->clickskeks_domain_key || null === $objRootPage->clickskeks_language) {
             return $buffer;
+        }
+
+        // check if a specific language is set to the bar
+        $barLanguage = '';
+        if($objRootPage->clickskeks_language) {
+            $barLanguage = '&amp;lang='.$objRootPage->clickskeks_language;
         }
 
         $html = sprintf(
             $this->html,
-            substr($objRootPage->clickskeks_api_key, 0, 2),
-            substr($objRootPage->clickskeks_api_key, 2, 2),
-            $objRootPage->clickskeks_api_key
+            $objRootPage->clickskeks_api_key,
+            $objRootPage->clickskeks_domain_key,
+            $barLanguage
         );
 
         return preg_replace('/(<head>)/s', "$1\n$html", $buffer);
