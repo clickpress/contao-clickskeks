@@ -13,14 +13,8 @@ declare(strict_types=1);
 
 namespace Clickpress\ContaoClickskeksBundle\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Contao\DataContainer;
-use Contao\LayoutModel;
 use Contao\PageModel;
-use Contao\PageRegular;
-use Contao\Database;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 
 /**
@@ -31,7 +25,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  * @author Stefan Schulz-Lauterbach <ssl@clickpress.de>
  */
 
-class ContaoClickskeksListener implements ServiceAnnotationInterface
+class ContaoClickskeksListener
 {
 
     /**
