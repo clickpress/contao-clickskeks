@@ -18,9 +18,9 @@ use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController
 use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Contao\ContentModel;
 use Contao\BackendTemplate;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\PageModel;
 use Contao\System;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -29,7 +29,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ContaoClickskeksController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
 
         $request = System::getContainer()->get('request_stack')->getCurrentRequest();
