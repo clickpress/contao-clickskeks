@@ -13,14 +13,8 @@ declare(strict_types=1);
 
 namespace Clickpress\ContaoClickskeksBundle\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Contao\DataContainer;
-use Contao\LayoutModel;
 use Contao\PageModel;
-use Contao\PageRegular;
-use Database;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 
 /**
@@ -31,10 +25,8 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  * @author Stefan Schulz-Lauterbach <ssl@clickpress.de>
  */
 
-class ContaoClickskeksListener implements ServiceAnnotationInterface
+class ContaoClickskeksListener
 {
-
-    private string $html =  '<script src="https://mein.clickskeks.at/app.js?apiKey=%s&amp;domain=%s%s" referrerpolicy="origin"></script>';
 
     /**
      * @Hook("modifyFrontendPage")
@@ -50,22 +42,12 @@ class ContaoClickskeksListener implements ServiceAnnotationInterface
         $objRootPage = PageModel::findByPk($objPage->rootId);
 
         // check if null, to prevent that the bar is loaded, even if the checkbox 'activate clickskeks' is not checked
-        if (null === $objRootPage || null === $objRootPage->clickskeks_active || null === $objRootPage->clickskeks_api_key || null === $objRootPage->clickskeks_domain_key || null === $objRootPage->clickskeks_language) {
+        if (null === $objRootPage || null === $objRootPage->clickskeks_active || null === $objRootPage->clickskeks_key) {
             return $buffer;
         }
 
-        // check if a specific language is set to the bar
-        $barLanguage = '';
-        if($objRootPage->clickskeks_language) {
-            $barLanguage = '&amp;lang='.$objRootPage->clickskeks_language;
-        }
-
-        $html = sprintf(
-            $this->html,
-            $objRootPage->clickskeks_api_key,
-            $objRootPage->clickskeks_domain_key,
-            $barLanguage
-        );
+        //decode at this point because the pallete decode dosnt work correctly
+        $html =html_entity_decode($objRootPage->clickskeks_key);
 
         return preg_replace('/(<head>)/s', "$1\n$html", $buffer);
     }

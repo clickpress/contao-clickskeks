@@ -14,14 +14,15 @@
   ],
   "require": {
     "php": "^7.4 || ^8.0",
-    "contao/core-bundle": "^4.9"
+    "contao/core-bundle": "5.0.*",
+    "scheb/2fa-backup-code": "^6.3"
   },
   "conflict": {
     "contao/manager-plugin": "<2.0 || >=3.0"
   },
   "require-dev": {
-    "contao/manager-plugin": "^2.0",
-    "contao/easy-coding-standard": "^2.0"
+    "contao/manager-plugin": "2.*",
+    "contao/easy-coding-standard": "^5.4"
   },
   "extra": {
     "contao-manager-plugin": "Clickpress\\ContaoClickskeksBundle\\ContaoManager\\Plugin"
@@ -29,6 +30,13 @@
   "autoload": {
     "psr-4": {
       "Clickpress\\ContaoClickskeksBundle\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "contao/manager-plugin": true
     }
   }
 }
