@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": "^7.4 || ^8.0",
-    "contao/core-bundle": "5.0.*",
+    "contao/core-bundle": "^5.0",
     "scheb/2fa-backup-code": "^6.3"
   },
   "conflict": {
