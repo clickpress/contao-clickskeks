@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Clickpress\ContaoClickskeksBundle\Controller\ContentElement;
 
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\ContentModel;
 use Contao\BackendTemplate;
 use Contao\CoreBundle\Twig\FragmentTemplate;
@@ -24,9 +24,7 @@ use Contao\System;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="texts")
- */
+#[AsContentElement(category: 'texts')]
 class ContaoClickskeksController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
