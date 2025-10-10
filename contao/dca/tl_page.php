@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['clickskeks_active'] = [
     'exclude' => true,
     'inputType' => 'checkbox',
     'eval' => ['submitOnChange' => true],
-    'sql' => "char(1) NOT NULL default ''"
+    'sql' => ['type' => 'string', 'length' => 1, 'fixed' => true, 'default' => '']
 ];
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['clickskeks_key'] = [
@@ -30,7 +30,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['clickskeks_key'] = [
     'search' => true,
     'inputType' => 'textarea',
     'eval' => ['decodeEntities' => false, 'tl_class' => 'w50', 'allowHtml' => true],
-    'sql' => "String NOT NULL default ''"
+    'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
 ];
 
 
