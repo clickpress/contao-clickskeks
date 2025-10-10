@@ -11,6 +11,6 @@ or use the Contao Manager.
 ## Usage
 1. Add your site in your clickskeks panel
 2. Go to "Site structure" in Contao and activate the Clickskeks banner in your root site
-3. Add your Banner ID
+3. Add your banner script
 4. Clear the "Shared Cache" under "Maintenance"
 
