@@ -13,8 +13,8 @@
     }
   ],
   "require": {
-    "php": "^8.3",
-    "contao/core-bundle": "^5.6",
+    "php": "^8.2",
+    "contao/core-bundle": "^5.3",
     "scheb/2fa-backup-code": "^6.3"
   },
   "conflict": {
