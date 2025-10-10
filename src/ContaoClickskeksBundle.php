@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Clickpress\ContaoClickskeksBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class ContaoClickskeksBundle extends Bundle
+class ContaoClickskeksBundle extends AbstractBundle
 {
 }
