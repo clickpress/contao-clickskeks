@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autoconfigure: true
+
+  Clickpress\ContaoClickskeksBundle\:
+    resource: ../src
+    exclude: ../src/{ContaoManager,DependencyInjection}
