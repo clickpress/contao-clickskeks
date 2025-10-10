@@ -29,7 +29,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['clickskeks_key'] = [
     'exclude' => true,
     'search' => true,
     'inputType' => 'textarea',
-    'eval' => ['decodeEntities' => false, 'tl_class' => 'w50', 'allowHtml' => true],
+    'eval' => ['useRawRequestData' => true, 'decodeEntities' => false, 'tl_class' => 'w50', 'allowHtml' => true],
     'sql' => ['type' => 'string', 'length' => 255, 'default' => ''],
 ];
 
