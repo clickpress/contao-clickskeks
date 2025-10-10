@@ -18,20 +18,20 @@ $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'clickskeks_active
 
 $GLOBALS['TL_DCA']['tl_page']['subpalettes']['clickskeks_active'] = 'clickskeks_key';
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['clickskeks_active'] = array(
+$GLOBALS['TL_DCA']['tl_page']['fields']['clickskeks_active'] = [
     'exclude' => true,
     'inputType' => 'checkbox',
-    'eval' => array('submitOnChange' => true),
+    'eval' => ['submitOnChange' => true],
     'sql' => "char(1) NOT NULL default ''"
-);
+];
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['clickskeks_key'] = array(
+$GLOBALS['TL_DCA']['tl_page']['fields']['clickskeks_key'] = [
     'exclude' => true,
     'search' => true,
     'inputType' => 'textarea',
-    'eval' => array('decodeEntities' => false, 'tl_class' => 'w50', 'allowHtml' => true),
+    'eval' => ['decodeEntities' => false, 'tl_class' => 'w50', 'allowHtml' => true],
     'sql' => "String NOT NULL default ''"
-);
+];
 
 
 if (isset($GLOBALS['TL_DCA']['tl_page']['palettes']['rootfallback'])) {
