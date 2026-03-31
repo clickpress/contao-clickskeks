@@ -13,9 +13,7 @@
     }
   ],
   "require": {
-    "php": "^8.2",
-    "contao/core-bundle": "^5.3",
-    "scheb/2fa-backup-code": "^6.3"
+    "contao/core-bundle": "^5.3"
   },
   "conflict": {
     "contao/manager-plugin": "<2.0 || >=3.0"
